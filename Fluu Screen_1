@@ -1,0 +1,277 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int _selectedIndex = 0;
+  static const TextStyle optionStyle =
+      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  static const List<Widget> _widgetOptions = <Widget>[
+    Text(
+      'Index 0: Home',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 1: Message',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 2: Profile',
+      style: optionStyle,
+    ),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      home: Scaffold(
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            height: 700,
+            width: 700,
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Text(
+                'Messages',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 24),
+              ),
+              SizedBox(height: 20),
+              Text(
+                'Activities',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20),
+              ),
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  CircleAvatar(
+                    radius: 40,
+                    backgroundColor: Colors.transparent,
+                    child: CircleAvatar(
+                      backgroundImage: NetworkImage(
+                          'https://th.bing.com/th/id/R.9a6fa7c065fd6907062b495db602da94?rik=y0bLtuDFgNEZVg&riu=http%3a%2f%2fthewaywomenwork.com%2fwp-content%2fuploads%2f2013%2f10%2fPolina-Guchsha-Russia-small.jpg&ehk=uwdyjPCDnDsDmanSlZQ%2btPQdI2yinCCtesOWkD%2bxi20%3d&risl=&pid=ImgRaw&r=0'),
+                      radius: 35,
+                    ),
+                  ),
+                  CircleAvatar(
+                    radius: 40,
+                    backgroundColor: Colors.green,
+                    child: CircleAvatar(
+                      backgroundImage: NetworkImage(
+                          'https://1.bp.blogspot.com/-TlIRtOXmmDA/WS8Ar-jMLDI/AAAAAAAAH58/b03hdJmdDTs6j0X9d9FQOlHWAHYTJC6KQCK4B/s1600/Stock%2Bimages%2Bare%2Boften%2Bcasted%2Bwith%2Battractive%2Bpeople%2B...-790465.jpg'),
+                      radius: 35,
+                    ),
+                  ),
+                  CircleAvatar(
+                    radius: 40,
+                    backgroundColor: Colors.transparent,
+                    child: CircleAvatar(
+                      backgroundImage: NetworkImage(
+                          'https://media.istockphoto.com/photos/forty-something-man-picture-id502734204?k=6&m=502734204&s=612x612&w=0&h=7vBKfSGEyW0P2vgbYlYYuzSO_7Pj-BKt8-WCeN33GZ8='),
+                      radius: 35,
+                    ),
+                  ),
+                  CircleAvatar(
+                    radius: 40,
+                    backgroundColor: Colors.green,
+                    child: CircleAvatar(
+                      backgroundImage: NetworkImage(
+                          'https://th.bing.com/th/id/OIP.vrWe0hFEy2NJ1dxrNoAo-wAAAA?pid=ImgDet&rs=1'),
+                      radius: 35,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 20),
+              Text(
+                'Messages',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: SingleChildScrollView(
+                  child: Container(
+                    height: 75,
+                    width: 400,
+                    child: Row(
+                      children: [
+                        CircleAvatar(
+                          radius: 25,
+                          backgroundColor: Colors.blue,
+                          child: Text('E'),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Emma',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              SizedBox(height: 3),
+                              Text('Ok, see you then'),
+                            ],
+                          ),
+                        ),
+                        SizedBox(width: 85),
+                        Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Text('20 min',
+                                  style: TextStyle(color: Colors.grey)),
+                              SizedBox(height: 3),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: Container(
+                  height: 75,
+                  width: 400,
+                  child: Row(
+                    children: [
+                      CircleAvatar(
+                        radius: 25,
+                        backgroundColor: Colors.purple,
+                        child: Text('A'),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Ava',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(height: 3),
+                            Text('Your favourite movie ?'),
+                          ],
+                        ),
+                      ),
+                      SizedBox(width: 50),
+                      Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Text(
+                              '30 min',
+                              style: TextStyle(color: Colors.grey),
+                            ),
+                            SizedBox(height: 3),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: Container(
+                  height: 75,
+                  width: 400,
+                  child: Row(
+                    children: [
+                      CircleAvatar(
+                        radius: 25,
+                        backgroundColor: Colors.red,
+                        child: Text('S'),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Sophia',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(height: 3),
+                            Text('Bye!'),
+                          ],
+                        ),
+                      ),
+                      SizedBox(width: 150),
+                      Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Column(
+                          children: [
+                            Text(
+                              '1 hr',
+                              style: TextStyle(color: Colors.grey),
+                            ),
+                            SizedBox(height: 3),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ]),
+          ),
+        ),
+        bottomNavigationBar: BottomNavigationBar(items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.maps_home_work_outlined, color: Colors.grey),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.message,
+              color: Colors.red,
+            ),
+            label: 'Message',
+          ),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+        ]),
+      ),
+    );
+  }
+}
