@@ -5,6 +5,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+
   const MyApp({super.key});
 
   // This widget is the root of your application.
@@ -12,55 +13,191 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      home: SafeArea(
+      home: DefaultTabController(
+        length: 3,
         child: Scaffold(
           resizeToAvoidBottomInset: false,
-          body: Container(
-                padding: EdgeInsets.all(20),
-                height: 800,
-                width: 500,
-                child: SingleChildScrollView(
-                  child: Column(
+          appBar: AppBar(
+            title: Row(
                     children: [
-                      Row(
-                        children: [
-                          Icon(Icons.arrow_back),
-                          SizedBox(
-                            width: 150,
-                          ),
-                          Text('Regularization', style: TextStyle(fontSize: 18)),
-                        ],
-                      ),
+                      Icon(Icons.arrow_back, color: Colors.black),
                       SizedBox(
-                        height: 20,
+                        width: 150,
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Text('Apply'),
-                          Text('Pending', style: TextStyle(fontWeight: FontWeight.bold)),
-                          Text('History'),
-                        ],
+                      Text('Regularization', style: TextStyle(fontSize: 18, color: Colors.black)),
+                    ],
+                  ),
+            backgroundColor: Colors.white,
+            bottom: TabBar(
+                    tabs: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text('Apply', style: TextStyle(color: Colors.black)),
                       ),
-                      Divider(
-                        height: 30,
-                      ),
-                      Container(
-                        padding: EdgeInsets.all(15),
-                        height: 200,
-                        width: 440,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          border: Border.all(
-                            color: Colors.grey,
-                            width: 4,
-                          ),
+                      Text('Pending', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
+                      Text('History', style: TextStyle(color: Colors.grey.shade600)),
+                ]),
+          ),
+          body: Container(
+              padding: EdgeInsets.all(20),
+              height: 800,
+              width: 500,
+              child: SingleChildScrollView(
+                child: Column(children: [
+                  
+                  SizedBox(
+                    height: 20,
+                  ),
+                
+                  Divider(
+                    height: 30,
+                  ),
+                  Container(
+                      padding: EdgeInsets.all(15),
+                      height: 200,
+                      width: 440,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(
+                          color: Colors.grey,
+                          width: 4,
                         ),
-                        
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                        Text('Wed 27 July 22', style: TextStyle(fontSize: 8),),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Wed 27 July 22',
+                            style: TextStyle(fontSize: 8),
+                          ),
+                          SizedBox(height: 5),
+                          Row(
+                            children: [
+                              CircleAvatar(
+                                radius: 18,
+                                backgroundColor: Colors.blue,
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Column(
+                                children: [
+                                  Text(
+                                    'Rakesh Shinde',
+                                    style: TextStyle(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  SizedBox(height: 5),
+                                  Text(
+                                    'Sales Executive',
+                                    style: TextStyle(
+                                        color: Colors.blue, fontSize: 10),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 10),
+                            ],
+                          ),
+                          SizedBox(height: 10),
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.timer,
+                                color: Colors.blue,
+                                size: 10,
+                              ),
+                              Text(
+                                '09:00 AM to 08:00 PM',
+                                style: TextStyle(
+                                    fontSize: 10, fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 10),
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.place,
+                                color: Colors.blue,
+                                size: 10,
+                              ),
+                              Text(
+                                'Navi Mumbai to Belapur',
+                                style: TextStyle(
+                                    fontSize: 10, fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          Container(
+                            alignment: Alignment.center,
+                            height: 20,
+                            width: 100,
+                            child: Text(
+                              'Forgot to Log Off',
+                              style: TextStyle(fontSize: 10),
+                            ),
+                            decoration: BoxDecoration(
+                                color: Colors.grey.shade300,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10))),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                height: 20,
+                                width: 140,
+                                child: Text(
+                                  'Accepted',
+                                  style: TextStyle(color: Colors.white),
+                                  textAlign: TextAlign.center,
+                                ),
+                                decoration: BoxDecoration(
+                                    color: Colors.blue,
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10))),
+                              ),
+                              SizedBox(width: 110),
+                              Container(
+                                height: 20,
+                                width: 140,
+                                child: Text('Declined',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(color: Colors.white)),
+                                decoration: BoxDecoration(
+                                    color: Colors.grey.shade600,
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10))),
+                              ),
+                            ],
+                          ),
+                        ],
+                      )),
+                  SizedBox(height: 15),
+                  Container(
+                    padding: EdgeInsets.all(15),
+                    height: 200,
+                    width: 440,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(
+                        color: Colors.grey,
+                        width: 4,
+                      ),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Wed 21 July 22',
+                          style: TextStyle(fontSize: 8),
+                        ),
                         SizedBox(height: 5),
                         Row(
                           children: [
@@ -73,20 +210,23 @@ class MyApp extends StatelessWidget {
                             ),
                             Column(
                               children: [
-                                Text('Rakesh Shinde', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),),
+                                Text(
+                                  'Rakesh Shinde',
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.bold),
+                                ),
                                 SizedBox(height: 5),
                                 Text(
                                   'Sales Executive',
-                                  style: TextStyle(color: Colors.blue,fontSize: 10),
+                                  style: TextStyle(
+                                      color: Colors.blue, fontSize: 10),
                                 ),
-                                
                               ],
-                              
                             ),
-                            SizedBox(height: 10),
                           ],
                         ),
-                        SizedBox(height:10),
+                        SizedBox(height: 10),
                         Row(
                           children: [
                             Icon(
@@ -94,7 +234,11 @@ class MyApp extends StatelessWidget {
                               color: Colors.blue,
                               size: 10,
                             ),
-                            Text('09:00 AM to 08:00 PM', style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),),
+                            Text(
+                              '09:00 AM to 08:00 PM',
+                              style: TextStyle(
+                                  fontSize: 10, fontWeight: FontWeight.bold),
+                            ),
                           ],
                         ),
                         SizedBox(height: 10),
@@ -105,18 +249,28 @@ class MyApp extends StatelessWidget {
                               color: Colors.blue,
                               size: 10,
                             ),
-                            Text('Navi Mumbai to Belapur',style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),),
+                            Text(
+                              'Navi Mumbai to Belapur',
+                              style: TextStyle(
+                                  fontSize: 10, fontWeight: FontWeight.bold),
+                            ),
                           ],
                         ),
                         SizedBox(
-                          height: 15,
+                          height: 10,
                         ),
                         Container(
-                          alignment: Alignment.center,
                           height: 20,
                           width: 100,
-                          child: Text('Forgot to Log Off', style: TextStyle(fontSize: 10),),
-                          decoration: BoxDecoration(color: Colors.grey.shade300, borderRadius: BorderRadius.all(Radius.circular(10))),
+                          child: Text(
+                            'Forgot to Log Off',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(fontSize: 10),
+                          ),
+                          decoration: BoxDecoration(
+                              color: Colors.grey.shade300,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10))),
                         ),
                         SizedBox(
                           height: 10,
@@ -126,122 +280,35 @@ class MyApp extends StatelessWidget {
                             Container(
                               height: 20,
                               width: 140,
-                              child: Text('Accepted', style: TextStyle(color:Colors.white),
-                              textAlign: TextAlign.center,),
-                              decoration: BoxDecoration(color: Colors.blue, borderRadius: BorderRadius.all(Radius.circular(10))),
+                              child: Text('Accepted',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(color: Colors.white)),
+                              decoration: BoxDecoration(
+                                  color: Colors.blue,
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10))),
                             ),
                             SizedBox(width: 110),
                             Container(
                               height: 20,
                               width: 140,
-                              child: Text('Declined', textAlign: TextAlign.center, style: TextStyle(color: Colors.white)),
-                              decoration: BoxDecoration(color: Colors.grey.shade600,borderRadius: BorderRadius.all(Radius.circular(10))),
+                              child: Text('Declined',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(color: Colors.white)),
+                              decoration: BoxDecoration(
+                                  color: Colors.grey.shade600,
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10))),
                             ),
                           ],
                         ),
-                    ],
-                    )),
-                    SizedBox(height: 15),
-                        Container(
-                          padding: EdgeInsets.all(15),
-                          height: 200,
-                          width: 440,
-                          decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          border: Border.all(
-                            color: Colors.grey,
-                            width: 4,
-                          ),
-                        ),
-                        
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('Wed 21 July 22', style: TextStyle(fontSize: 8 ),),
-                              SizedBox(height: 5),
-                              Row(
-                                children: [
-                                  CircleAvatar(
-                                    radius: 18,
-                                    backgroundColor: Colors.blue,
-                                  ),
-                                  SizedBox(
-                                    width: 5,
-                                  ),
-                                  Column(
-                                    children: [
-                                      Text('Rakesh Shinde',style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),),
-                                      SizedBox(height: 5),
-                                      Text(
-                                        'Sales Executive',
-                                        style: TextStyle(color: Colors.blue, fontSize: 10),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                              SizedBox(height: 10),
-                              Row(
-                                children: [
-                                  Icon(
-                                    Icons.timer,
-                                    color: Colors.blue,
-                                    size: 10,
-                                  ),
-                                  Text('09:00 AM to 08:00 PM', style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),),
-                                ],
-                              ),
-                              SizedBox(height: 10),
-                              Row(
-                                children: [
-                                  Icon(
-                                    Icons.place,
-                                    color: Colors.blue,
-                                    size: 10,
-                                  ),
-                                  Text('Navi Mumbai to Belapur',style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),),
-                                ],
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Container(
-                                height: 20,
-                                width: 100,
-                                child: Text('Forgot to Log Off', textAlign: TextAlign.center,
-                                style: TextStyle(fontSize: 10),),
-                                decoration: BoxDecoration(color: Colors.grey.shade300, borderRadius: BorderRadius.all(Radius.circular(10))),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Row(
-                                children: [
-                                  Container(
-                                    height: 20,
-                                    width: 140,
-                                    child: Text('Accepted', textAlign: TextAlign.center, style: TextStyle(color: Colors.white)),
-                                    decoration: BoxDecoration(color: Colors.blue, borderRadius: BorderRadius.all(Radius.circular(10))),
-                                  ),
-                                  SizedBox(width: 110),
-                                  Container(
-                                    height: 20,
-                                    width: 140,
-                                    child: Text('Declined', textAlign: TextAlign.center, style: TextStyle(color: Colors.white)),
-                                    decoration:
-                                        BoxDecoration(color: Colors.grey.shade600, borderRadius: BorderRadius.all(Radius.circular(10))),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        )
-                      ]),
-                )
-                ),
-          ),
-            ),
-      );
-        
+                      ],
+                    ),
+                  )
+          ])),
+              )),
+        ));
+      
+    
   }
 }
