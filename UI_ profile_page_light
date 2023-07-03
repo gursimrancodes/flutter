@@ -1,0 +1,179 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        home: Scaffold(
+          backgroundColor: Colors.white,
+          body: Container(
+              child: Center(
+            child: Column(
+              children: [
+                SizedBox(height: 10),
+                CircleAvatar(
+                  backgroundImage: NetworkImage(
+                      'https://th.bing.com/th/id/OIP.a_C9v1H7RBbVyFjU4udThgHaKX?pid=ImgDet&rs=1'),
+                  radius: 45,
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Text(
+                  'Nicholas Adams',
+                  style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 5),
+                Text(
+                  'nicholasadams@gmail.com',
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: Colors.grey,
+                  ),
+                ),
+                SizedBox(height: 20),
+                Container(
+                  height: 30,
+                  width: 200,
+                  decoration: BoxDecoration(
+                    color: Colors.yellow,
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Center(
+                    child: Text('Upgrade to PRO',
+                        style: TextStyle(color: Colors.black)),
+                  ),
+                ),
+                SizedBox(height: 25),
+                Container(
+                    height: 30,
+                    width: 300,
+                    decoration: BoxDecoration(
+                      color: Colors.grey.shade100,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(Icons.person_2),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Text('Privacy'),
+                        SizedBox(width: 164),
+                        Icon(Icons.arrow_forward_ios),
+                      ],
+                    )),
+                SizedBox(height: 20),
+                Container(
+                    height: 30,
+                    width: 300,
+                    decoration: BoxDecoration(
+                      color: Colors.grey.shade200,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(Icons.access_time_filled_rounded),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Text('Purchase History'),
+                        SizedBox(width: 108),
+                        Icon(Icons.arrow_forward_ios),
+                      ],
+                    )),
+                SizedBox(height: 20),
+                Container(
+                    height: 30,
+                    width: 300,
+                    decoration: BoxDecoration(
+                      color: Colors.grey.shade200,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(Icons.help),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Text('Help & Support'),
+                        SizedBox(width: 120),
+                        Icon(Icons.arrow_forward_ios),
+                      ],
+                    )),
+                SizedBox(height: 20),
+                Container(
+                    height: 30,
+                    width: 300,
+                    decoration: BoxDecoration(
+                      color: Colors.grey.shade200,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(Icons.settings),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Text('Settings'),
+                        SizedBox(width: 158),
+                        Icon(Icons.arrow_forward_ios),
+                      ],
+                    )),
+                SizedBox(height: 20),
+                Container(
+                    height: 30,
+                    width: 300,
+                    decoration: BoxDecoration(
+                      color: Colors.grey.shade200,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(Icons.person_add_alt_1_sharp),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Text('Invite a friend'),
+                        SizedBox(width: 130),
+                        Icon(Icons.arrow_forward_ios),
+                      ],
+                    )),
+                SizedBox(height: 20),
+                Container(
+                    height: 30,
+                    width: 300,
+                    decoration: BoxDecoration(
+                      color: Colors.grey.shade200,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(Icons.logout),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Text('Logout'),
+                        SizedBox(width: 160),
+                        Icon(Icons.arrow_forward_ios),
+                      ],
+                    )),
+                SizedBox(height: 20),
+              ],
+            ),
+          )),
+        ));
+  }
+}
