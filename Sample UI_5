@@ -1,0 +1,230 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      home: Scaffold(
+        backgroundColor: Colors.blue.shade300,
+        body: Container(
+          padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(10),
+                    child: Row(
+                      children: [
+                        Icon(Icons.arrow_back_ios),
+                        Column(
+                          children: [
+                            Text('All my loans'),
+                            Text('Due 28 Oct'),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                    child: Text(
+                      '\$703.68',
+                      style: TextStyle(color: Colors.white, fontSize: 27),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 20),
+              Container(
+                height: 485,
+                width: 550,
+                padding: EdgeInsets.all(5),
+                decoration: BoxDecoration(
+                  color: Colors.grey.shade100,
+                ),
+                child: Column(
+                  children: [
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: Text(
+                        'One-time Payment',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 24,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(5),
+                      height: 60,
+                      width: 450,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('Direct Debit (USD)'),
+                              SizedBox(height: 5),
+                              Text(
+                                'REQUIRES A US BANK ACCOUNT | NO FEES',
+                                style: TextStyle(fontSize: 10),
+                              ),
+                            ],
+                          ),
+                          CircleAvatar(
+                            radius: 25,
+                            backgroundColor: Colors.blue,
+                            child: Text('USD',
+                                style: TextStyle(color: Colors.white)),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    Container(
+                      padding: EdgeInsets.all(5),
+                      height: 60,
+                      width: 450,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('TransferWise '),
+                              SizedBox(height: 5),
+                              Text(
+                                'FEES MAY APPLY',
+                                style: TextStyle(fontSize: 10),
+                              ),
+                            ],
+                          ),
+                          CircleAvatar(
+                            radius: 25,
+                            backgroundColor: Colors.black,
+                            child: Text('TW',
+                                style: TextStyle(color: Colors.white)),
+                          )
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    Container(
+                      padding: EdgeInsets.all(5),
+                      height: 60,
+                      width: 450,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('Flywire'),
+                              SizedBox(height: 5),
+                              Text(
+                                'FEES MAY APPLY',
+                                style: TextStyle(fontSize: 10),
+                              ),
+                            ],
+                          ),
+                          CircleAvatar(
+                            radius: 25,
+                            backgroundColor: Colors.green,
+                            child: Text('FW',
+                                style: TextStyle(color: Colors.white)),
+                          )
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    Container(
+                      padding: EdgeInsets.all(5),
+                      height: 60,
+                      width: 450,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('Revolut'),
+                              SizedBox(height: 5),
+                              Text('FEES MAY APPLY',
+                                  style: TextStyle(fontSize: 10)),
+                            ],
+                          ),
+                          CircleAvatar(
+                            radius: 25,
+                            backgroundColor: Colors.orange.shade400,
+                            child: Text('R',
+                                style: TextStyle(color: Colors.white)),
+                          )
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    Container(
+                      padding: EdgeInsets.all(5),
+                      height: 60,
+                      width: 450,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('Bnk Transfer'),
+                              SizedBox(height: 5),
+                              Text('FEES MAY APPLY',
+                                  style: TextStyle(fontSize: 10)),
+                            ],
+                          ),
+                          CircleAvatar(
+                            radius: 25,
+                            backgroundColor: Colors.cyan.shade400,
+                            child: Text('BT',
+                                style: TextStyle(color: Colors.white)),
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
